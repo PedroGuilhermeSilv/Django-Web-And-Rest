@@ -19,4 +19,9 @@ Abaixo esta uma lista dos comandos mais utilizados:
 5. Executar servidor 
 	python manage.py runserver
 ## Aula 18.
+### Anotações:
 django-admin e o manage.py ambos servem para executar os mesmos comandos. Entretanto, o manage.py cria uma variável de ambiente que aponta para um arquivo setting que vem com algumas pré-configurações do projeto e no startprject será feito pelo django-admin, pois o manage.py ainda não foi criado. 
+
+## Aula 19.
+### Anotações:
+Criado arquivo .jason no vscode para facilitar o uso do django. O arquivo irá executar o comando de inicialização do django com o comando: manage.py runserver.
