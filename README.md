@@ -33,3 +33,8 @@ Em urls.py teremos os caminhos de urls do nosso site. Afunção 'path' recebe do
 ## Aula 23.
 ### Anotações:
 Criando um app podemos separar as pastas e caminhos de urls de determinada parte do site. Adicionamos as funções no arquivo views.py e os caminhos no urls.py dentro da pasta do app. Já na pasta raiz do django podemos fazer o include do app.urls que puxará as funções deixando o código mais limpo e organizado. 
+
+
+## Aula 24.
+### Anotações:
+Quando criar um app o django deve ser informado, indo em settings.py em INSTALLED_APPS. Problema de colisão de nomes ocorre quando temos dois arquivos com nomes iguais, o django irá retornar o primeiro que encontrar. Para solucionar é bom usar name espace, ou seja, alterne os nomes dos arquivos ou adicione em uma subpasta para diferenciar.
