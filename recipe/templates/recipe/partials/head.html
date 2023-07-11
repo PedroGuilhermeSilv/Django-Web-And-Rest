@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+                :root {
+            --color-primary: #269fe6;
+            --color-primary-hover: #2086c2;
+            --color-primary-dark: #13141f;
+            --color-primary-dark-hover: #212336;
+            --color-primary-light: #d4ecfa;
+            --color-primary-light-hover: #bdd8e7;
+
+            --color-white: #fff;
+            --color-black: #000;
+
+            --color-dark-text: #444;
+            --color-info-light: #cce5ff;
+            --color-debug-light: #cce5ff;
+            --color-success-light: #d4edda;
+            --color-alert-light: #fff3cd;
+            --color-warning-light: #fff3cd;
+            --color-error-light: #f8d7da;
+
+            --color-info-dark: #4d86c4;
+            --color-debug-dark: #4d86c4;
+            --color-success-dark: #4a9c5d;
+            --color-alert-dark: #927f40;
+            --color-warning-dark: #927f40;
+            --color-error-dark: #da525d;
+
+            --color-gray-0: #f9f9f9;
+            --color-gray-1: #e0e0e0;
+            --color-gray-2: #c7c7c7;
+            --color-gray-3: #aeaeae;
+            --color-gray-4: #959595;
+            --color-gray-5: #7d7d7d;
+            --color-gray-6: #646464;
+            --color-gray-7: #4b4b4b;
+            --color-gray-8: #323232;
+            --color-gray-9: #191919;
+
+            --font-primary: sans-serif;
+            --font-headings: 'Roboto Slab', serif;
+
+            --spacing-gutter-medium: 3rem;
+            --spacing-gutter-large: 4rem;
+        }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+         font-size: 62.5%; /*vamos utilizar a medida rem */
+    }
+    body{
+        font-size: 1.6rem; /*16px*/
+        font-family: var(--font-primary);
+        background-color: var(--color-gray-1);
+    }
+    h1,h2,h3{
+        font-family: var(--font-headings);
+    }
+    .main-header-container{
+        background-color: var(--color-primary-dark);
+
+    }
+    .container{
+        margin: 0 auto;
+        max-width: 144rem;
+        padding: var(--spacing-gutter-medium);
+
+    }
+    .main-logo{
+        text-decoration: none;
+        color: var(--color-white);
+        /* background-color: red; */
+        text-align: center;
+        width: fit-content;
+        padding: var(--spacing-gutter-large);
+        
+
+    }
+    .main-logo-text{
+        padding-left: 2rem;
+    }
+    .search-button, .search-input{
+        border: none;
+        background: none;
+        outline: none;
+        padding: 1rem;
+    }
+    .search-form{
+        border-style: solid;
+        border-color: var(--color-primary-dark);
+        margin: 0 auto;
+        border-radius: 0.4rem;
+        position: relative;
+        width: 60rem;
+        transition: 1s;
+        
+    }
+    .search-button{
+        position: absolute;
+        top:0;
+        right: 0;
+        
+    }
+    .search-input{
+        width: 100%;
+        padding-right: 3rem;
+    }
+    /* se alguém estiver sendo o foco ele altera as cores do input ed busca  */
+    .search-form:focus-within{
+        border-color: var(--color-debug-dark);
+        background-color: var(--color-white)
+        
+    }
+    .search-form:focus-within .search-button{
+        color: var(--color-debug-dark);
+        
+    }
+    .search-button:focus{
+        background-color: rgb(0, 0, 0, 0.09);
+    }
+    </style>
+</head>

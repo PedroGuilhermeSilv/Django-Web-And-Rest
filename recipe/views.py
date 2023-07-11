@@ -3,10 +3,5 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
-    return render(request,'recipe/home.html')
+    return render(request,'recipe/pages/home.html')
 
-def sobre(request):
-    return HttpResponse('Sobre')
-
-def contato(request):
-    return render(request,'recipe/contato.html')

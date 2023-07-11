@@ -38,3 +38,7 @@ Criando um app podemos separar as pastas e caminhos de urls de determinada parte
 ## Aula 24.
 ### Anotações:
 Quando criar um app o django deve ser informado, indo em settings.py em INSTALLED_APPS. Problema de colisão de nomes ocorre quando temos dois arquivos com nomes iguais, o django irá retornar o primeiro que encontrar. Para solucionar é bom usar name espace, ou seja, alterne os nomes dos arquivos ou adicione em uma subpasta para diferenciar.
+
+## Aula 28.
+### Anotações:
+O Django trabalha com separação das páginas. Por exemplo, nosso app Recipe terá "pages" e "partials" onde o primeiro terá as páginas e o segundo as partes que se irão ser repetidas nas demais páginas. Além disso, para execução de um comando no código html o Django usa a tag {% comando %}.
