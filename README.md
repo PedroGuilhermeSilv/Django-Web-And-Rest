@@ -19,7 +19,7 @@ Abaixo esta uma lista dos comandos mais utilizados:
 5. Executar servidor 
 	python manage.py runserver
 
-# Django Urls, Views e templates:	
+# Seção 5 Django Urls, Views e templates:	
 ## Aula 18.
 ### Anotações:
 django-admin e o manage.py ambos servem para executar os mesmos comandos. Entretanto, o manage.py cria uma variável de ambiente que aponta para um arquivo setting que vem com algumas pré-configurações do projeto e no startprject será feito pelo django-admin, pois o manage.py ainda não foi criado. 
