@@ -18,6 +18,8 @@ Abaixo esta uma lista dos comandos mais utilizados:
 	django-admin startproject nome-projeto caminho-projeto
 5. Executar servidor 
 	python manage.py runserver
+
+# Django Urls, Views e templates:	
 ## Aula 18.
 ### Anotações:
 django-admin e o manage.py ambos servem para executar os mesmos comandos. Entretanto, o manage.py cria uma variável de ambiente que aponta para um arquivo setting que vem com algumas pré-configurações do projeto e no startprject será feito pelo django-admin, pois o manage.py ainda não foi criado. 
@@ -42,3 +44,39 @@ Quando criar um app o django deve ser informado, indo em settings.py em INSTALLE
 ## Aula 28.
 ### Anotações:
 O Django trabalha com separação das páginas. Por exemplo, nosso app Recipe terá "pages" e "partials" onde o primeiro terá as páginas e o segundo as partes que se irão ser repetidas nas demais páginas. Além disso, para execução de um comando no código html o Django usa a tag {% comando %}.
+
+# Seção 6: Django Staticfiles: Arquivos estáticos (imagens, css, javascript, etc)
+## Aula 37 a 41
+### Anotações:
+O Django organiza os arquivos estáticos (e.g. images, JavaScript, CSS) para serem carregados de uma pasta especificas. A pasta com nome "static" será busca no seu app, mas sempre use o nameespace para diferenciar cada tipo de arquivo e não gerar conflitos. Para saber mais use a documentação:  
+https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+# Seção 7: 
+## Aula 42
+### Anotações:
+É possível passar parâmetros pela urls através do path em urls.py. Leia: 
+https://docs.djangoproject.com/pt-br/3.2/topics/http/urls/ 
+
+## Aula 44 e 45
+### Anotações:
+É possível herdar de uma página html geral por exemplo: A maioria dos sites em suas páginas possuem o mesmo header e footer. Em sua página base use {% block name %}{% endblock name %} para identificar onde será o local que você insirar novos containers. Já na sua nova página você {% extends 'global/base.html' %} e usa o mesmo comando inicial de block para inserir os novos dados. Mas, lembre-se de informar para o django em settings.py-TEMPLATES-DIRS o caminho da pasta onde está o arquivo base.
+
+## Aula 46
+### Anotações:
+Podemos automatizar o preechimento temporário do nosso site. Criando um arquivo factory.py e usando a biblioteca Faker é possível gerar dados aletórios e inserir no HTML. Primeiro vá em views.py e importe seu código (from utils.recipe.factory import make_recipe), abra o campo context{} para retornar a variável para o HTML 
+def recipe(request,id):
+    return render(request,'recipe/pages/recipe-view.html',context={
+    'recipe':make_recipe(),'is_details_page':True,
+    })
+
+Indo para seu código HTML agora podemos importar as funções de acordo com o nome da variável que foi passada: 
+ <div class="recipe-meta-text">
+    {{recipe.servings}} Porções 
+ </div>
+
+## Aula 49
+### Anotações:
+É possível também fazer Namespace das urls. Criar uma variável em urls.py chamada app_name= 'recipe'.
+No path adicione a vairável: name="home".
+Em seu código html você pode usar o {% url 'recipes:home' %} no local do link. 
+Isso fará com que o site se torne mais dinâmico.
