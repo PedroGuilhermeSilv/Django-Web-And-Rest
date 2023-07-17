@@ -54,8 +54,8 @@ https://docs.djangoproject.com/en/4.2/howto/static-files/
 # Seção 7: Django Templates: herança, blocos, if, for e mais: 
 ## Aula 42
 ### Anotações:
-É possível passar parâmetros pela urls através do path em urls.py. Leia: 
-https://docs.djangoproject.com/pt-br/3.2/topics/http/urls/ 
+É possível passar parâmetros pela urls através do path em urls.py. 
+Leia: https://docs.djangoproject.com/pt-br/3.2/topics/http/urls/ 
 
 ## Aula 44 e 45
 ### Anotações:
@@ -64,15 +64,18 @@ https://docs.djangoproject.com/pt-br/3.2/topics/http/urls/
 ## Aula 46
 ### Anotações:
 Podemos automatizar o preechimento temporário do nosso site. Criando um arquivo factory.py e usando a biblioteca Faker é possível gerar dados aletórios e inserir no HTML. Primeiro vá em views.py e importe seu código (from utils.recipe.factory import make_recipe), abra o campo context{} para retornar a variável para o HTML 
+```
 def recipe(request,id):
     return render(request,'recipe/pages/recipe-view.html',context={
     'recipe':make_recipe(),'is_details_page':True,
     })
-
-Indo para seu código HTML agora podemos importar as funções de acordo com o nome da variável que foi passada: 
+```
+Indo para seu código HTML agora podemos importar as funções de acordo com o nome da variável que foi passada:
+``` 
  <div class="recipe-meta-text">
     {{recipe.servings}} Porções 
  </div>
+ ```
 
 ## Aula 49
 ### Anotações:
