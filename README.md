@@ -51,7 +51,7 @@ O Django trabalha com separação das páginas. Por exemplo, nosso app Recipe te
 O Django organiza os arquivos estáticos (e.g. images, JavaScript, CSS) para serem carregados de uma pasta especificas. A pasta com nome "static" será busca no seu app, mas sempre use o nameespace para diferenciar cada tipo de arquivo e não gerar conflitos. Para saber mais use a documentação:  
 https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# Seção 7: 
+# Seção 7: Django Templates: herança, blocos, if, for e mais: 
 ## Aula 42
 ### Anotações:
 É possível passar parâmetros pela urls através do path em urls.py. Leia: 
