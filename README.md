@@ -83,3 +83,17 @@ Indo para seu código HTML agora podemos importar as funções de acordo com o n
 No path adicione a vairável: name="home".
 Em seu código html você pode usar o {% url 'recipes:home' %} no local do link. 
 Isso fará com que o site se torne mais dinâmico.
+
+# Seção 8: Django Models e ORM (Object Relational Mapper)
+
+## Aula 51
+### Anotações:
+Em Django, "models" se refere à parte do framework que lida com a definição e interação com o banco de dados. Os models são classes Python que representam tabelas no banco de dados e definem os campos e comportamentos dessas tabelas. Eles são fundamentais para a criação e manipulação dos dados em um aplicativo Django.
+
+## Aula 52
+### Anotações:
+Em Django, as "migrations" são um mecanismo que permite gerenciar e aplicar as alterações no esquema do banco de dados de forma automatizada, permitindo que você defina a estrutura do banco de dados usando classes Python (models) e, em seguida, sincronize automaticamente essa estrutura com o banco de dados real.
+
+## Aula 54
+### Anotações: 
+Podemos usar o django admin para fazer uso dos nosso models cadastrados. Em admin.py você criará uma classe admin para seu models, importar o model e adicionará ele com a função admin.site.register(Model,ModelAdmin)
