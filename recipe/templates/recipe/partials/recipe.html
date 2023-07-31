@@ -1,8 +1,10 @@
 <div class="recipe recipe-list-item">
     <div class="recipe-cover">
-        <a href="{% url 'recipes:recipe' recipe.id %}">
-            <img src="{{recipe.cover.url}}" alt="">
-        </a>
+        {% if recipe.cover %}
+            <a href="{% url 'recipes:recipe' recipe.id %}">
+                    <img src="{{recipe.cover.url}}" alt="">             
+            </a>
+        {% endif %}
     </div>
     <div class="recipe-title-container">
         <a href="{% url 'recipes:recipe' recipe.id %}">
@@ -11,16 +13,24 @@
     </div>
 
     <div class="recipe-author">
-        <span class="recipe-author-item">
-            <i class="fas fa-user"></i>
-            {{recipe.author.first_name}} {{recipe.author.last_name}}
-        </span>
+        {% if recipe.author.first_name %}
+            <span class="recipe-author-item">
+                <i class="fas fa-user"></i>
+                {{recipe.author.first_name}} {{recipe.author.last_name}}
+            </span>
+        {% else %}
+            <span class="recipe-author-item">
+                <i class="fas fa-user"></i>
+                {{recipe.author.username}} 
+            </span>          
+        {% endif %}
+
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
             {{recipe.created_at|date:"d-m-Y"}}
         </span>
         <span class="recipe-author-item">
-            <a href="/recipes/category/cafe-da-manha/">
+            <a href="{% url 'recipes:category' recipe.category.id %}">
                 <i class="fas fa-layer-group"></i>
                 <span>{{recipe.category.name}}</span>
             </a>
@@ -32,15 +42,15 @@
     </div>
     <div class="recipe-meta-container">
         <div class="recipe-meta recipe-preparation">
-            <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> {{recipe.preparation_time_unit}}</h3>
+            <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Preparo </h3>
             <div class="recipe-meta-text">
-                {{recipe.preparation_time}} Minutos
+                {{recipe.preparation_time}} {{recipe.preparation_time_unit}}
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
-            <h3 class="recipe-meta-title"><i class="fas fa-pizza-slice"></i> {{recipe.servings_unit}}</h3>
+            <h3 class="recipe-meta-title"><i class="fas fa-pizza-slice"></i> Porções  </h3>
             <div class="recipe-meta-text">
-                {{recipe.servings}} Porções 
+                {{recipe.servings}} {{recipe.servings_unit}}
             </div>
         </div>
     </div>
