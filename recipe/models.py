@@ -8,6 +8,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Recipe(models.Model):
     title = models.CharField(max_length=45)
     description = models.CharField(max_length=145)
@@ -21,10 +22,12 @@ class Recipe(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
     is_published = models.BooleanField(default=False)
-    cover = models.ImageField(upload_to='recipe/covers/%Y/%m/%d/',blank=True,default='')
+    cover = models.ImageField(upload_to='recipe/covers/%Y/%m/%d/', blank=True, default='')  # noqa: E501
 
-    category = models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
-    author = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
     def __str__(self):
         return self.title
     ...

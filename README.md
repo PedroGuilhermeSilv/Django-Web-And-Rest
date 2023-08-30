@@ -98,13 +98,30 @@ Em Django, as "migrations" são um mecanismo que permite gerenciar e aplicar as 
 ### Anotações: 
 Podemos usar o django admin para fazer uso dos nosso models cadastrados. Em admin.py você criará uma classe admin para seu models, importar o model e adicionará ele com a função:
 ```
-admin.site.register(Model,ModelAdmin)
+class nomdemodelAdmin(admin.ModelAdmin)
+	...
+```
+Após criar a classe basta registrar podendo ser de duas maneiras:
+
+```
+admin.site.register(Model,nomdedomodelAdmin)
 ```
  ou 
  ```
- com @admin.register(Recipe).
+@admin.register(Model)
+class nomdemodelAdmin(admin.ModelAdmin)
+	...
  ```
 
 ## Aula 56. (Conhecendo o Django Shell e manipulando QuerySets com ele)
 No Django, o shell é uma ferramenta útil que permite interagir com sua aplicação web através da linha de comando. Ele é especialmente útil para depurar, testar e explorar os dados do banco de dados e a lógica de sua aplicação. Para acessar o shell do Django, você pode usar o comando python manage.py shell no diretório raiz do seu projeto.
+comando para iniciar o shell: python manage.py shell
 link da documentação: https://docs.djangoproject.com/pt-br/3.2/ref/models/querysets/ 
+
+## Aula 54 Criando superuser
+Podemos criar um superuser para acessar o django admin. Primeiro temos que ativar o ambiente virtual e digitar o comando:
+python manage.py createsuperuser.
+
+## Aula 80
+Podemos executar testes de maneira individual usando pytest -k 'nome_do_teste' ou executar todos com pytest
+

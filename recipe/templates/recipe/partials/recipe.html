@@ -11,8 +11,9 @@
             <h2 class="recipe-title">{{recipe.title}}</h2>
         </a>
     </div>
-
+    
     <div class="recipe-author">
+    {% if recipe.author is not None %}
         {% if recipe.author.first_name %}
             <span class="recipe-author-item">
                 <i class="fas fa-user"></i>
@@ -24,17 +25,21 @@
                 {{recipe.author.username}} 
             </span>          
         {% endif %}
+    {% endif %}
 
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
             {{recipe.created_at|date:"d-m-Y"}}
         </span>
-        <span class="recipe-author-item">
-            <a href="{% url 'recipes:category' recipe.category.id %}">
-                <i class="fas fa-layer-group"></i>
-                <span>{{recipe.category.name}}</span>
-            </a>
-        </span>
+        {% if recipe.category.id %}
+            <span class="recipe-author-item">
+                <a href="{% url 'recipes:category' recipe.category.id %}">
+                    <i class="fas fa-layer-group"></i>
+                    <span>{{recipe.category.name}}</span>
+                </a>
+            </span>
+        {% endif %}
+        
     </div>
 
     <div class="recipe-content">
@@ -64,7 +69,13 @@
         </footer>
     {% endif %}
     {% if is_details_page is True %}
-        <div class="preparation-steps">{{recipe.preparation_steps|linebreaksbr}}</div>
+        <div class="preparation-steps">
+            {% if recipe.preparation_steps_is_html is True %}
+                {{recipe.preparation_steps|safe}} 
+            {% else %}
+                {{recipe.preparation_steps|linebreaksbr}}
+            {% endif %}
+        </div>
     {% endif %}
     
 
