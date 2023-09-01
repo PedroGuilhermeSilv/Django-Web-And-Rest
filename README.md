@@ -123,5 +123,8 @@ Podemos criar um superuser para acessar o django admin. Primeiro temos que ativa
 python manage.py createsuperuser.
 
 ## Aula 80
-Podemos executar testes de maneira individual usando pytest -k 'nome_do_teste' ou executar todos com pytest
+Podemos executar testes de maneira individual usando pytest -k 'nome_do_teste' ou executar todos com pytest. Quando um teste é executado um banco de dados temporário para execução.
+
+## Aula 81
+Um trecho de código usado para dar suporte a um test unitário se chama de "fixture", no nosso exemplo criamos uma recipe e category na mão para fazer os testes do context que seria verificar se o conteúdo que está sendo passado está sendo recebido e depois o content que verifica se o HTML está carregando o conteúdo passado, assim verificando tanto o back como front end.
 
