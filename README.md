@@ -30,7 +30,7 @@ Criado arquivo .json no vscode para facilitar o uso do django. O arquivo irá ex
 
 ## Aula 20.
 ### Anotações:
-Em urls.py teremos os caminhos de urls do nosso site. Afunção 'path' recebe dois parâmetros( string caminho e uma função de retorno http). 
+Em urls.py teremos os caminhos de urls do nosso site. A função 'path' recebe dois parâmetros(string caminho e uma função de retorno http que recebe uma request de parametro). 
 
 ## Aula 23.
 ### Anotações:
