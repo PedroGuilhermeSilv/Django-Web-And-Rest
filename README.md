@@ -39,7 +39,7 @@ Criando um app podemos separar as pastas e caminhos de urls de determinada parte
 
 ## Aula 24.
 ### Anotações:
-Quando criar um app o django deve ser informado, indo em settings.py em INSTALLED_APPS. Problema de colisão de nomes ocorre quando temos dois arquivos com nomes iguais, o django irá retornar o primeiro que encontrar. Para solucionar é bom usar name espace, ou seja, alterne os nomes dos arquivos ou adicione em uma subpasta para diferenciar.
+Em nosso arquivo views.py usamos `from django.shortcuts import render` que será responsável por renderizar nossos templates html nas rotas, essa função irá receber uma request, caminho do template e entre outros parâmetros. O django usa a pasta app/templetes como base para busca dos templates html, então para prevenir problemas de colisão  é bom usar name espace, ou seja, altemrne os nomes dos arquivos ou adicione e uma subpasta para diferenciar Ex: `app/templates/recipe/pages/home.html` assim no render irá ficar `recipe/pages/home.html`. Para adicionar pasta adicionais de templates como `base-templates` devemos informar no settings.py o caminho na variável TEMPLATE.
 
 ## Aula 28.
 ### Anotações:
